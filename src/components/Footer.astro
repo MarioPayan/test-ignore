@@ -5,6 +5,7 @@
 
 import { siteContent } from '../data/content';
 
+const { base } = import.meta.env;
 const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
 ---
 
@@ -32,27 +33,27 @@ const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
         </h3>
         <ul class="space-y-2 text-sm">
           <li>
-            <a href="/habitaciones" class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/habitaciones`} class="hover:text-sage-400 transition-colors">
               Nuestras Habitaciones
             </a>
           </li>
           <li>
-            <a href="/eventos" class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/eventos`} class="hover:text-sage-400 transition-colors">
               Eventos Culturales
             </a>
           </li>
           <li>
-            <a href="/nosotros" class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/nosotros`} class="hover:text-sage-400 transition-colors">
               Sobre Nosotros
             </a>
           </li>
           <li>
-            <a href="/ubicacion" class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/ubicacion`} class="hover:text-sage-400 transition-colors">
               Cómo Llegar
             </a>
           </li>
           <li>
-            <a href="/contacto" class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/contacto`} class="hover:text-sage-400 transition-colors">
               Contacto
             </a>
           </li>

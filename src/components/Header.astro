@@ -5,15 +5,16 @@
 
 import { siteContent } from '../data/content';
 
+const { base } = import.meta.env;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/habitaciones', label: 'Habitaciones' },
-  { href: '/eventos', label: 'Eventos Culturales' },
-  { href: '/nosotros', label: 'Nosotros' },
-  { href: '/ubicacion', label: 'Ubicación' },
-  { href: '/contacto', label: 'Contacto' },
+  { href: `${base}/`, label: 'Inicio' },
+  { href: `${base}/habitaciones`, label: 'Habitaciones' },
+  { href: `${base}/eventos`, label: 'Eventos Culturales' },
+  { href: `${base}/nosotros`, label: 'Nosotros' },
+  { href: `${base}/ubicacion`, label: 'Ubicación' },
+  { href: `${base}/contacto`, label: 'Contacto' },
 ];
 
 const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
@@ -22,7 +23,7 @@ const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
 <header class="bg-white shadow-md sticky top-0 z-50">
   <nav class="container mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
-      <a href="/" class="flex items-center space-x-2">
+      <a href={`${base}/`} class="flex items-center space-x-2">
         <span class="text-2xl font-serif font-bold text-terracota-600">
           {siteContent.siteName}
         </span>

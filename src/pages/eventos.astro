@@ -8,15 +8,17 @@ import ImageGallery from '../components/ImageGallery.astro';
 import { siteContent } from '../data/content';
 import { images } from '../data/images';
 
+const { base } = import.meta.env;
+
 const eventMedia = {
   images: images.eventosCulturales,
   videos: [
-    '/images/eventos_culturales/video_1.mp4',
-    '/images/eventos_culturales/video_2.mp4',
-    '/images/eventos_culturales/video_3.mp4',
-    '/images/eventos_culturales/video_4.mp4',
-    '/images/eventos_culturales/video_5.mp4',
-    '/images/eventos_culturales/video_6.mp4',
+    `${base}/images/eventos_culturales/video_1.mp4`,
+    `${base}/images/eventos_culturales/video_2.mp4`,
+    `${base}/images/eventos_culturales/video_3.mp4`,
+    `${base}/images/eventos_culturales/video_4.mp4`,
+    `${base}/images/eventos_culturales/video_5.mp4`,
+    `${base}/images/eventos_culturales/video_6.mp4`,
   ],
 };
 ---
@@ -197,7 +199,7 @@ const eventMedia = {
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
-          href="/habitaciones" 
+          href={`${base}/habitaciones`}
           class="bg-poeta-purple hover:bg-poeta-purple/90 text-white px-8 py-3 rounded-lg font-medium transition-colors"
         >
           Ver Habitaciones

@@ -15,6 +15,7 @@ interface Props {
   description?: string;
 }
 
+const { base } = import.meta.env;
 const { description = siteContent.siteDescription } = Astro.props;
 ---
 
@@ -37,7 +38,7 @@ const { description = siteContent.siteDescription } = Astro.props;
 		<meta property="twitter:description" content={description} />
 		
 		<!-- Favicon -->
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 		
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />

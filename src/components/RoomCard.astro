@@ -16,7 +16,8 @@ interface Props {
 }
 
 const { room } = Astro.props;
-const primaryImage = room.images[0] || (room.videos?.[0] ? null : '/images/placeholder.jpg');
+const { base } = import.meta.env;
+const primaryImage = room.images[0] || (room.videos?.[0] ? null : `${base}/images/placeholder.jpg`);
 ---
 
 <div class="bg-white rounded-lg shadow-medium overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -65,7 +66,7 @@ const primaryImage = room.images[0] || (room.videos?.[0] ? null : '/images/place
 
     <div class="flex gap-3">
       <a
-        href={`/habitaciones#${room.id}`}
+        href={`${base}/habitaciones#${room.id}`}
         class="flex-1 bg-terracota-600 hover:bg-terracota-700 text-white text-center px-4 py-2 rounded-lg transition-colors font-medium text-sm"
       >
         Ver Detalles

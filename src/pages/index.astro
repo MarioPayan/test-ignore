@@ -10,6 +10,7 @@ import { testimonials, culturalEvents, includedServices } from '../data/rooms';
 import { siteContent } from '../data/content';
 import { images } from '../data/images';
 
+const { base } = import.meta.env;
 const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
 ---
 
@@ -36,7 +37,7 @@ const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
-          href="/habitaciones" 
+          href={`${base}/habitaciones`}
           class="bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors shadow-lg"
         >
           {siteContent.hero.ctaButton}
@@ -117,7 +118,7 @@ const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
       
       <div class="text-center mt-10">
         <a 
-          href="/eventos" 
+          href={`${base}/eventos`}
           class="inline-block bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
         >
           {siteContent.culturalEvents.ctaButton}
@@ -161,7 +162,7 @@ const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
           {siteContent.location.description}
         </p>
         <a 
-          href="/ubicacion" 
+          href={`${base}/ubicacion`}
           class="inline-block bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
         >
           {siteContent.location.ctaButton}

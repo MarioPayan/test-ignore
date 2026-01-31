@@ -5,6 +5,8 @@
 
 import Layout from '../layouts/Layout.astro';
 import { siteContent } from '../data/content';
+
+const { base } = import.meta.env;
 ---
 
 <Layout>
@@ -263,7 +265,7 @@ import { siteContent } from '../data/content';
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
-          href="/habitaciones" 
+          href={`${base}/habitaciones`}
           class="bg-white text-terracota-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-colors"
         >
           Ver Habitaciones

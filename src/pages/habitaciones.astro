@@ -9,6 +9,7 @@ import ImageGallery from '../components/ImageGallery.astro';
 import { rooms } from '../data/rooms';
 import { siteContent } from '../data/content';
 
+const { base } = import.meta.env;
 const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
 ---
 
@@ -80,7 +81,7 @@ const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
                 {siteContent.rooms.whatsappCta}
               </a>
               <a
-                href="/contacto"
+                href={`${base}/contacto`}
                 class="flex-1 bg-terracota-600 hover:bg-terracota-700 text-white text-center px-6 py-3 rounded-lg transition-colors font-medium"
               >
                 📧 Enviar Consulta
