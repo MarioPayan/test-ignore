@@ -40,10 +40,13 @@ const { description = siteContent.siteDescription } = Astro.props;
 		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 		
-		<!-- Google Fonts -->
+		<!-- Google Fonts con display=swap para evitar FOIT -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet" />
+		
+		<!-- DNS Prefetch para recursos externos -->
+		<link rel="dns-prefetch" href="https://wa.me" />
 		
 		<title>{siteContent.siteName}</title>
 	</head>

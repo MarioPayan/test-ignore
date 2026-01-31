@@ -13,5 +13,21 @@ export default defineConfig({
     service: {
       entrypoint: 'astro/assets/services/sharp'
     }
+  },
+  // Optimizaciones de build
+  build: {
+    inlineStylesheets: 'auto',
+  },
+  vite: {
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'vendor': ['astro'],
+          }
+        }
+      }
+    }
   }
 });

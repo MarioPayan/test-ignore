@@ -9,51 +9,51 @@ const base = import.meta.env.BASE_URL;
 const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
 ---
 
-<footer class="bg-gray-900 text-gray-300">
-  <div class="container mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300">
+  <div class="container mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
       
       <div>
-        <h3 class="text-xl font-serif font-bold text-white mb-4">
+        <h3 class="text-2xl font-display font-bold text-white mb-5 bg-gradient-to-r from-terracota-400 to-sage-400 bg-clip-text text-transparent">
           {siteContent.siteName}
         </h3>
-        <p class="text-sm leading-relaxed mb-4">
+        <p class="text-sm leading-relaxed mb-6 text-gray-400">
           {siteContent.siteDescription}
         </p>
-        <p class="text-sm">
-          <strong class="text-white">Ubicación:</strong><br />
+        <p class="text-sm text-gray-400">
+          <strong class="text-white font-semibold">Ubicación:</strong><br />
           Barrio San Antonio<br />
           Cali, Colombia
         </p>
       </div>
 
       <div>
-        <h3 class="text-xl font-serif font-bold text-white mb-4">
+        <h3 class="text-xl font-display font-bold text-white mb-5">
           Enlaces
         </h3>
-        <ul class="space-y-2 text-sm">
+        <ul class="space-y-3 text-sm">
           <li>
-            <a href={`${base}/habitaciones`} class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/habitaciones`} class="hover:text-terracota-400 transition-all hover:translate-x-1 inline-block">
               Nuestras Habitaciones
             </a>
           </li>
           <li>
-            <a href={`${base}/eventos`} class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/eventos`} class="hover:text-terracota-400 transition-all hover:translate-x-1 inline-block">
               Eventos Culturales
             </a>
           </li>
           <li>
-            <a href={`${base}/nosotros`} class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/nosotros`} class="hover:text-terracota-400 transition-all hover:translate-x-1 inline-block">
               Sobre Nosotros
             </a>
           </li>
           <li>
-            <a href={`${base}/ubicacion`} class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/ubicacion`} class="hover:text-terracota-400 transition-all hover:translate-x-1 inline-block">
               Cómo Llegar
             </a>
           </li>
           <li>
-            <a href={`${base}/contacto`} class="hover:text-sage-400 transition-colors">
+            <a href={`${base}/contacto`} class="hover:text-terracota-400 transition-all hover:translate-x-1 inline-block">
               Contacto
             </a>
           </li>
@@ -61,23 +61,23 @@ const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
       </div>
 
       <div>
-        <h3 class="text-xl font-serif font-bold text-white mb-4">
+        <h3 class="text-xl font-display font-bold text-white mb-5">
           Contáctanos
         </h3>
-        <ul class="space-y-3 text-sm">
+        <ul class="space-y-4 text-sm">
           <li class="flex items-start">
-            <span class="mr-2">📱</span>
+            <span class="mr-3 text-xl">📱</span>
             <div>
               <a 
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="hover:text-sage-400 transition-colors"
+                class="hover:text-terracota-400 transition-colors font-medium"
               >
                 +57 301 271 2450
               </a>
               <br />
-              <span class="text-xs text-gray-400">WhatsApp disponible</span>
+              <span class="text-xs text-gray-500">WhatsApp disponible</span>
             </div>
           </li>
           <li class="flex items-center">
