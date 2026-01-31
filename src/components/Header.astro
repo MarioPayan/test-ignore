@@ -5,7 +5,7 @@
 
 import { siteContent } from '../data/content';
 
-const { base } = import.meta.env;
+const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 
 const navLinks = [

@@ -15,7 +15,7 @@ interface Props {
   description?: string;
 }
 
-const { base } = import.meta.env;
+const base = import.meta.env.BASE_URL;
 const { description = siteContent.siteDescription } = Astro.props;
 ---
 

@@ -6,7 +6,7 @@
 import Layout from '../layouts/Layout.astro';
 import { siteContent } from '../data/content';
 
-const { base } = import.meta.env;
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout>

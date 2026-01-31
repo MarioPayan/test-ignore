@@ -16,7 +16,7 @@ interface Props {
 }
 
 const { room } = Astro.props;
-const { base } = import.meta.env;
+const base = import.meta.env.BASE_URL;
 const primaryImage = room.images[0] || (room.videos?.[0] ? null : `${base}/images/placeholder.jpg`);
 ---
 
