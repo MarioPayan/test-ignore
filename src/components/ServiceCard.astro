@@ -1,0 +1,26 @@
+---
+/**
+ * Tarjeta de Servicio
+ * 
+ * Muestra un servicio incluido con icono y descripción.
+ * 
+ * Props:
+ * - icon: Emoji o icono
+ * - name: Nombre del servicio
+ * - description: Descripción breve
+ */
+
+interface Props {
+  icon: string;
+  name: string;
+  description: string;
+}
+
+const { icon, name, description } = Astro.props;
+---
+
+<div class="text-center p-6 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all hover:-translate-y-1">
+  <div class="text-5xl mb-3">{icon}</div>
+  <h3 class="font-bold text-gray-900 mb-2">{name}</h3>
+  <p class="text-sm text-gray-600">{description}</p>
+</div>

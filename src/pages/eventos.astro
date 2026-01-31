@@ -1,0 +1,217 @@
+---
+/**
+ * Página de Eventos Culturales
+ */
+
+import Layout from '../layouts/Layout.astro';
+import ImageGallery from '../components/ImageGallery.astro';
+import { siteContent } from '../data/content';
+import { images } from '../data/images';
+
+const eventMedia = {
+  images: images.eventosCulturales,
+  videos: [
+    '/images/eventos_culturales/video_1.mp4',
+    '/images/eventos_culturales/video_2.mp4',
+    '/images/eventos_culturales/video_3.mp4',
+    '/images/eventos_culturales/video_4.mp4',
+    '/images/eventos_culturales/video_5.mp4',
+    '/images/eventos_culturales/video_6.mp4',
+  ],
+};
+---
+
+<Layout>
+  
+  <section class="bg-gradient-to-r from-sage-600 to-sage-700 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">
+        {siteContent.events.title}
+      </h1>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+        {siteContent.events.description}
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+        <div>
+          <img 
+            src={images.eventosCulturales[0]}
+            alt="Evento cultural en La Casa Del Poeta" 
+            class="rounded-lg shadow-medium"
+          />
+        </div>
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
+            🎬 Cineforos Semanales
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Cada semana nos reunimos en <strong>La Casa del Poeta</strong> para compartir 
+            una velada especial de cine y reflexión. Nuestros cineforos no son simplemente 
+            proyecciones de películas: son espacios de diálogo, aprendizaje y conexión.
+          </p>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Seleccionamos películas que invitan a pensar, sentir y discutir temas 
+            relevantes sobre cultura, sociedad, arte y la vida misma. Después de cada 
+            proyección, abrimos un espacio de conversación donde todos los participantes 
+            pueden compartir sus impresiones y perspectivas.
+          </p>
+          <div class="bg-sage-50 p-4 rounded-lg border border-sage-200">
+            <p class="text-gray-800 font-medium">
+              📅 <strong>Frecuencia:</strong> Todas las semanas<br/>
+              🎟️ <strong>Entrada:</strong> Incluida para huéspedes<br/>
+              🕐 <strong>Duración:</strong> 2-3 horas
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Otros Eventos Culturales -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-900 mb-12">
+        Más Actividades Culturales
+      </h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-soft hover:shadow-medium transition-shadow">
+          <div class="text-4xl mb-4">🎭</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Teatro y Performance</h3>
+          <p class="text-gray-600">
+            Ocasionalmente organizamos funciones de teatro independiente y 
+            performances artísticas en nuestros espacios comunes.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft hover:shadow-medium transition-shadow">
+          <div class="text-4xl mb-4">🎵</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Música en Vivo</h3>
+          <p class="text-gray-600">
+            Veladas musicales con artistas locales que comparten su talento 
+            en un ambiente íntimo y acogedor.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft hover:shadow-medium transition-shadow">
+          <div class="text-4xl mb-4">📚</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Club de Lectura</h3>
+          <p class="text-gray-600">
+            Encuentros para discutir libros que nos inspiran, 
+            con énfasis en literatura latinoamericana y colombiana.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft hover:shadow-medium transition-shadow">
+          <div class="text-4xl mb-4">🗣️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Conversatorios</h3>
+          <p class="text-gray-600">
+            Charlas sobre temas diversos: cultura, historia de Cali, 
+            política, arte y más, guiadas por invitados especiales.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft hover:shadow-medium transition-shadow">
+          <div class="text-4xl mb-4">🍽️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Cenas Comunitarias</h3>
+          <p class="text-gray-600">
+            Compartimos comidas donde cada huésped puede traer un plato 
+            y conocernos mejor en un ambiente relajado.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft hover:shadow-medium transition-shadow">
+          <div class="text-4xl mb-4">🎨</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Arte y Creatividad</h3>
+          <p class="text-gray-600">
+            Talleres de pintura, escritura creativa, fotografía y otras 
+            expresiones artísticas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería de Eventos -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-900 mb-8">
+        Galería de Eventos
+      </h2>
+      <p class="text-center text-gray-600 mb-8">
+        Momentos capturados de nuestros encuentros culturales
+      </p>
+      
+      <ImageGallery 
+        images={eventMedia.images}
+        videos={eventMedia.videos}
+      />
+    </div>
+  </section>
+
+  <!-- Filosofía Cultural -->
+  <section class="py-16 bg-oliva-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="bg-white p-8 rounded-lg shadow-medium">
+        <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6 text-center">
+          Nuestra Filosofía Cultural
+        </h2>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <p>
+            En <strong>La Casa del Poeta</strong>, creemos que la cultura es fundamental 
+            para crear comunidad y enriquecer la experiencia de vivir en un lugar. 
+            No somos solo un espacio para dormir; somos un punto de encuentro donde 
+            la curiosidad, el arte y el diálogo se fomentan diariamente.
+          </p>
+          <p>
+            Nuestros eventos están diseñados para que los huéspedes puedan:
+          </p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Conectarse con otros residentes y formar una comunidad genuina</li>
+            <li>Experimentar Cali desde una perspectiva local y auténtica</li>
+            <li>Expandir horizontes a través del arte, el cine y las conversaciones</li>
+            <li>Sentirse parte de algo más grande que una simple estadía</li>
+          </ul>
+          <p class="mt-6 font-medium text-poeta-purple">
+            "La cultura nos une, el arte nos inspira, y la comunidad nos hace hogar."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Participación -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
+        ¿Cómo Participar?
+      </h2>
+      <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+        Todos los huéspedes de La Casa del Poeta tienen acceso automático a nuestros 
+        eventos culturales. Simplemente reserva tu habitación y forma parte de 
+        nuestra comunidad cultural.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/habitaciones" 
+          class="bg-poeta-purple hover:bg-poeta-purple/90 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+        >
+          Ver Habitaciones
+        </a>
+        <a 
+          href="https://wa.me/573012712450?text=Hola! Me gustaría saber más sobre los eventos culturales" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+        >
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

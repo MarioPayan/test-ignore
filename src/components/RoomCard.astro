@@ -1,0 +1,84 @@
+---
+/**
+ * Tarjeta de Habitación
+ * Componente para mostrar información de una habitación.
+ */
+
+interface Props {
+  room: {
+    id: string;
+    name: string;
+    description: string;
+    features: string[];
+    images: string[];
+    videos?: string[];
+  };
+}
+
+const { room } = Astro.props;
+const primaryImage = room.images[0] || (room.videos?.[0] ? null : '/images/placeholder.jpg');
+---
+
+<div class="bg-white rounded-lg shadow-medium overflow-hidden hover:shadow-lg transition-shadow duration-300">
+  <div class="relative h-64 bg-gray-200 overflow-hidden">
+    {primaryImage ? (
+      <img
+        src={primaryImage}
+        alt={room.name}
+        class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+    ) : room.videos?.[0] ? (
+      <video
+        src={room.videos[0]}
+        class="w-full h-full object-cover"
+        muted
+        loop
+        playsinline
+      />
+    ) : (
+      <div class="w-full h-full flex items-center justify-center text-gray-400">
+        <span class="text-4xl">🏠</span>
+      </div>
+    )}
+  </div>
+
+  <div class="p-6">
+    <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">
+      {room.name}
+    </h3>
+
+    <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+      {room.description}
+    </p>
+
+    <div class="mb-4">
+      <ul class="grid grid-cols-2 gap-2">
+        {room.features.slice(0, 4).map((feature) => (
+          <li class="text-sm text-gray-700 flex items-center">
+            <span class="text-terracota-600 mr-1">✓</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="flex gap-3">
+      <a
+        href={`/habitaciones#${room.id}`}
+        class="flex-1 bg-terracota-600 hover:bg-terracota-700 text-white text-center px-4 py-2 rounded-lg transition-colors font-medium text-sm"
+      >
+        Ver Detalles
+      </a>
+      <a
+        href={`https://wa.me/573012712450?text=Hola! Me interesa la ${room.name}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors font-medium text-sm"
+        title="Consultar por WhatsApp"
+      >
+        💬
+      </a>
+    </div>
+  </div>
+</div>

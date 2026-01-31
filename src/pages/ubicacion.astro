@@ -1,0 +1,283 @@
+---
+/**
+ * Página de Ubicación
+ */
+
+import Layout from '../layouts/Layout.astro';
+import { siteContent } from '../data/content';
+---
+
+<Layout>
+  
+  <section class="bg-gradient-to-r from-sage-600 to-sage-700 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">
+        {siteContent.locationPage.title}
+      </h1>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+        En el corazón patrimonial de Cali, donde la historia y 
+        la cultura se encuentran en cada esquina.
+      </p>
+    </div>
+  </section>
+
+  <!-- Información de Ubicación -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Columna Izquierda: Datos -->
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
+            🏛️ Barrio San Antonio
+          </h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Estamos ubicados en el <strong>barrio San Antonio</strong>, el corazón 
+            histórico y cultural de Cali. Este emblemático barrio colonial se encuentra 
+            en una colina que domina el centro de la ciudad, ofreciendo vistas panorámicas 
+            y un ambiente bohemio inigualable.
+          </p>
+          
+          <div class="bg-sage-50 p-6 rounded-lg mb-6 border border-sage-200">
+            <h3 class="font-bold text-gray-900 mb-4 text-xl">📍 Dirección</h3>
+            <p class="text-gray-800 mb-2">
+              <strong>Barrio San Antonio</strong><br/>
+              Cali, Valle del Cauca<br/>
+              Colombia
+            </p>
+            <p class="text-sm text-gray-600 mt-4">
+              Para la dirección exacta, por favor contáctanos por WhatsApp 
+              al momento de tu reserva.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <span class="text-2xl mr-3">🚶</span>
+              <div>
+                <h4 class="font-bold text-gray-900">A Pie</h4>
+                <p class="text-gray-600 text-sm">
+                  Todo el barrio San Antonio es perfecto para recorrer caminando. 
+                  La mayoría de atractivos están a 5-15 minutos a pie.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="text-2xl mr-3">🚕</span>
+              <div>
+                <h4 class="font-bold text-gray-900">En Taxi o Uber</h4>
+                <p class="text-gray-600 text-sm">
+                  Desde cualquier punto de Cali, pide llegar al "Barrio San Antonio" 
+                  o a la "Iglesia de San Antonio".
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="text-2xl mr-3">✈️</span>
+              <div>
+                <h4 class="font-bold text-gray-900">Desde el Aeropuerto</h4>
+                <p class="text-gray-600 text-sm">
+                  Aproximadamente 30-40 minutos en taxi/Uber desde el 
+                  Aeropuerto Alfonso Bonilla Aragón.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <span class="text-2xl mr-3">🚌</span>
+              <div>
+                <h4 class="font-bold text-gray-900">En Transporte Público</h4>
+                <p class="text-gray-600 text-sm">
+                  Varias rutas de buses pasan cerca. Te compartiremos 
+                  las opciones exactas al confirmar tu reserva.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Mapa de Google -->
+        <div>
+          <div class="rounded-lg overflow-hidden shadow-lg mb-6 h-96">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.39472069654!2d-76.5319516!3d3.4516467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a1575b1d9c77%3A0x95e8c2f2c8e0c6f0!2sSan%20Antonio%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1234567890123" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de ubicación de La Casa del Poeta en San Antonio, Cali"
+            ></iframe>
+          </div>
+          
+          <div class="flex flex-col gap-3">
+            <a
+              href="https://maps.app.goo.gl/4JrreJ4gyzvz5UYP6"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full bg-terracota-600 hover:bg-terracota-700 text-white text-center px-6 py-3 rounded-lg font-medium transition-colors"
+            >
+              📍 Abrir en Google Maps
+            </a>
+            <a
+              href="https://wa.me/573012712450?text=Hola! Me gustaría información sobre cómo llegar a La Casa del Poeta"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full bg-green-600 hover:bg-green-700 text-white text-center px-6 py-3 rounded-lg font-medium transition-colors"
+            >
+              📱 Solicitar Direcciones por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué hay cerca -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-900 mb-12">
+        ¿Qué Hay Cerca?
+      </h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-soft">
+          <div class="text-4xl mb-3">🌅</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Mirador de San Antonio</h3>
+          <p class="text-gray-600 mb-2">
+            Vista panorámica de toda la ciudad, perfecta para atardeceres.
+          </p>
+          <p class="text-sm text-terracota-600">A 5 minutos caminando</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft">
+          <div class="text-4xl mb-3">⛪</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Iglesia de San Antonio</h3>
+          <p class="text-gray-600 mb-2">
+            Hermosa iglesia colonial, ícono del barrio desde 1747.
+          </p>
+          <p class="text-sm text-terracota-600">A 3 minutos caminando</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft">
+          <div class="text-4xl mb-3">🍽️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Restaurantes y Cafés</h3>
+          <p class="text-gray-600 mb-2">
+            Amplia variedad de opciones gastronómicas, desde comida típica hasta cocina internacional.
+          </p>
+          <p class="text-sm text-terracota-600">Por toda la zona</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft">
+          <div class="text-4xl mb-3">🎨</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Galerías de Arte</h3>
+          <p class="text-gray-600 mb-2">
+            Múltiples galerías con exposiciones de artistas locales e internacionales.
+          </p>
+          <p class="text-sm text-terracota-600">A 5-10 minutos caminando</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft">
+          <div class="text-4xl mb-3">🎵</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Vida Nocturna</h3>
+          <p class="text-gray-600 mb-2">
+            Bares con música en vivo, salsa y ambiente bohemio hasta altas horas.
+          </p>
+          <p class="text-sm text-terracota-600">En todo el barrio</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft">
+          <div class="text-4xl mb-3">🏛️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Centro Histórico</h3>
+          <p class="text-gray-600 mb-2">
+            Plaza de Cayzedo, teatros, museos y arquitectura colonial.
+          </p>
+          <p class="text-sm text-terracota-600">A 10-15 minutos caminando</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- San Antonio: El Barrio -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-900 mb-8">
+        ¿Por Qué San Antonio?
+      </h2>
+      
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <p class="leading-relaxed mb-4">
+          El <strong>barrio San Antonio</strong> es considerado uno de los barrios más 
+          emblemáticos de Cali por su rica historia, arquitectura colonial y vibrante 
+          escena cultural. Sus calles empedradas, casas coloridas y ambiente bohemio 
+          lo convierten en el lugar perfecto para experimentar la auténtica esencia caleña.
+        </p>
+        
+        <div class="bg-terracota-50 p-6 rounded-lg my-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Características del Barrio:</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <span class="text-terracota-600 mr-2">✓</span>
+              <span>Zona patrimonial protegida con arquitectura colonial del siglo XVIII</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-terracota-600 mr-2">✓</span>
+              <span>Ambiente seguro y tranquilo, ideal para paseos nocturnos</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-terracota-600 mr-2">✓</span>
+              <span>Centro cultural con galerías, teatros y espacios artísticos</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-terracota-600 mr-2">✓</span>
+              <span>Comunidad diversa de artistas, locales y viajeros</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-terracota-600 mr-2">✓</span>
+              <span>Excelente conexión con el resto de la ciudad</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="leading-relaxed">
+          Vivir en San Antonio significa despertarse con el canto de los pájaros, 
+          tomar café mientras observas la ciudad desde lo alto, caminar por calles 
+          llenas de historia y arte, y formar parte de una comunidad que valora 
+          la cultura y la convivencia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-16 bg-gradient-to-r from-terracota-600 to-terracota-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">
+        ¿Listo para Vivir en San Antonio?
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Reserva tu habitación y descubre por qué San Antonio es el lugar 
+        más especial de Cali.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/habitaciones" 
+          class="bg-white text-terracota-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-colors"
+        >
+          Ver Habitaciones
+        </a>
+        <a 
+          href="https://wa.me/573012712450" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold transition-colors"
+        >
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

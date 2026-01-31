@@ -1,0 +1,229 @@
+---
+/**
+ * Página Sobre Nosotros
+ */
+
+import Layout from '../layouts/Layout.astro';
+import { testimonials } from '../data/rooms';
+import { siteContent } from '../data/content';
+import { images } from '../data/images';
+---
+
+<Layout>
+  
+  <section class="bg-gradient-to-r from-sage-600 to-sage-700 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-6">
+        {siteContent.about.title}
+      </h1>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+        Más que un lugar para hospedarse, somos una comunidad 
+        que celebra la cultura y el arte en Cali.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-gray-900 mb-6">
+            Nuestra Historia
+          </h2>
+          <div class="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              <strong class="text-terracota-600">{siteContent.siteName}</strong> es una casa 
+              colonial recientemente adaptada como casa de largas estadías, ubicada en el 
+              corazón patrimonial de Cali, en el icónico barrio San Antonio.
+            </p>
+            <p>
+              Nuestro espacio fue creado con la visión de ofrecer más que un simple alojamiento: 
+              queremos que cada huésped experimente Cali desde una perspectiva local, auténtica 
+              y culturalmente enriquecedora.
+            </p>
+            <p>
+              Desde nuestros cineforos semanales hasta la arquitectura colonial que nos rodea, 
+              cada detalle de {siteContent.siteName} está pensado para crear una comunidad donde 
+              el arte, la cultura y la comodidad se encuentran.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img 
+            src={images.espaciosComunes[0]}
+            alt={siteContent.siteName}
+            class="rounded-lg shadow-medium"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestra Filosofía -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-900 mb-12">
+        Nuestra Filosofía
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-soft text-center">
+          <div class="text-5xl mb-4">🏛️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Patrimonio Cultural</h3>
+          <p class="text-gray-600">
+            Valoramos y preservamos la riqueza histórica de San Antonio, 
+            conectando a nuestros huéspedes con la esencia patrimonial de Cali.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-soft text-center">
+          <div class="text-5xl mb-4">🤝</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Comunidad</h3>
+          <p class="text-gray-600">
+            Creamos un ambiente acogedor donde los huéspedes pueden mantener 
+            su independencia y al mismo tiempo formar parte de un "gran parche".
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-soft text-center">
+          <div class="text-5xl mb-4">🎭</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Vida Cultural</h3>
+          <p class="text-gray-600">
+            Fomentamos el intercambio cultural a través de eventos semanales 
+            que enriquecen la experiencia de vivir en Cali.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- El Barrio San Antonio -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-900 mb-8">
+        San Antonio: Nuestro Hogar
+      </h2>
+      
+      <div class="bg-oliva-50 p-8 rounded-lg">
+        <p class="text-gray-700 leading-relaxed mb-4">
+          El <strong>barrio San Antonio</strong> es uno de los barrios más emblemáticos 
+          y bohemios de Cali. Ubicado en una colina que domina el centro de la ciudad, 
+          este barrio patrimonial es conocido por sus calles empedradas, su arquitectura 
+          colonial, y su vibrante vida cultural.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Aquí encontrarás galerías de arte, restaurantes con sabores locales e 
+          internacionales, bares con música en vivo, y el famoso mirador que ofrece 
+          una vista panorámica de toda la ciudad.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          Vivir en San Antonio es experimentar Cali en su forma más auténtica: 
+          donde la historia, el arte y la vida cotidiana se entrelazan en cada esquina.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lo que nos hace especiales -->
+  <section class="py-16 bg-terracota-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-900 mb-12">
+        Lo Que Nos Hace Especiales
+      </h2>
+      
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow-soft flex items-start">
+          <span class="text-3xl mr-4">🎬</span>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-2">Cineforos Semanales</h3>
+            <p class="text-gray-600">
+              Cada semana nos reunimos para ver y discutir películas que nos hacen 
+              reflexionar, aprender y conectarnos como comunidad.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft flex items-start">
+          <span class="text-3xl mr-4">🌿</span>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-2">Espacios Llenos de Vida</h3>
+            <p class="text-gray-600">
+              Nuestra casa está decorada con plantas increíbles, colores vibrantes 
+              y espacios que invitan a la tranquilidad y la inspiración.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft flex items-start">
+          <span class="text-3xl mr-4">👥</span>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-2">Anfitriones Comprometidos</h3>
+            <p class="text-gray-600">
+              Rossana y Nacho, nuestros anfitriones, están siempre atentos para 
+              hacer de tu estadía una experiencia memorable y cómoda.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-soft flex items-start">
+          <span class="text-3xl mr-4">✨</span>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-2">Todo Incluido</h3>
+            <p class="text-gray-600">
+              WiFi, servicios públicos, agua caliente, aseo y acceso a eventos 
+              culturales. Sin sorpresas, sin costos ocultos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-serif font-bold text-center text-gray-900 mb-12">
+        Voces de Nuestra Comunidad
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        {testimonials.map((testimonial) => (
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="text-3xl text-terracota-300 mb-2 font-serif">"</div>
+            <p class="text-gray-700 italic mb-4">{testimonial.text}</p>
+            <p class="font-semibold text-gray-900">— {testimonial.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-16 bg-gradient-to-r from-terracota-600 to-terracota-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">
+        ¿Listo para Ser Parte de Nuestra Comunidad?
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Ven a vivir la experiencia de La Casa del Poeta en San Antonio, Cali.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/habitaciones" 
+          class="bg-white text-terracota-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-colors"
+        >
+          Ver Habitaciones
+        </a>
+        <a 
+          href="https://wa.me/573012712450" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold transition-colors"
+        >
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

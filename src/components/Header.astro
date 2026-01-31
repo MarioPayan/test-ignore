@@ -1,0 +1,114 @@
+---
+/**
+ * Header / Navegación principal
+ */
+
+import { siteContent } from '../data/content';
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Inicio' },
+  { href: '/habitaciones', label: 'Habitaciones' },
+  { href: '/eventos', label: 'Eventos Culturales' },
+  { href: '/nosotros', label: 'Nosotros' },
+  { href: '/ubicacion', label: 'Ubicación' },
+  { href: '/contacto', label: 'Contacto' },
+];
+
+const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-serif font-bold text-terracota-600">
+          {siteContent.siteName}
+        </span>
+      </a>
+
+      <!-- Menú Desktop -->
+      <div class="hidden md:flex items-center space-x-6">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={`font-medium transition-colors ${
+              currentPath === link.href
+                ? 'text-terracota-600 border-b-2 border-terracota-600'
+                : 'text-gray-700 hover:text-terracota-600'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-terracota-600 text-white px-4 py-2 rounded-lg hover:bg-terracota-700 transition-colors font-medium"
+        >
+          WhatsApp
+        </a>
+      </div>
+
+      <button
+        id="mobile-menu-button"
+        class="md:hidden text-gray-700 focus:outline-none"
+        aria-label="Abrir menú"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú móvil (oculto por defecto) -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+      <div class="flex flex-col space-y-3">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={`font-medium px-4 py-2 rounded transition-colors ${
+              currentPath === link.href
+                ? 'bg-terracota-50 text-terracota-600'
+                : 'text-gray-700 hover:bg-gray-100'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-terracota-600 text-white px-4 py-2 rounded-lg hover:bg-terracota-700 transition-colors font-medium text-center"
+        >
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

@@ -1,0 +1,65 @@
+---
+/**
+ * Galería de Imágenes
+ * 
+ * Muestra una galería responsive de imágenes y videos.
+ * 
+ * Props:
+ * - images: Array de rutas de imágenes
+ * - videos: Array de rutas de videos (opcional)
+ * - title: Título de la galería (opcional)
+ */
+
+interface Props {
+  images: string[];
+  videos?: string[];
+  title?: string;
+}
+
+const { images, videos = [], title } = Astro.props;
+---
+
+<div class="my-8">
+  {title && (
+    <h3 class="text-2xl font-serif font-bold mb-4 text-gray-900">{title}</h3>
+  )}
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Imágenes -->
+    {images.map((image, index) => (
+      <div class="relative aspect-video bg-gray-200 rounded-lg overflow-hidden group cursor-pointer">
+        <img
+          src={image}
+          alt={`Imagen ${index + 1}`}
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+          <span class="text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">
+            🔍
+          </span>
+        </div>
+      </div>
+    ))}
+    
+    <!-- Videos -->
+    {videos.map((video, index) => (
+      <div class="relative aspect-video bg-gray-200 rounded-lg overflow-hidden">
+        <video
+          src={video}
+          class="w-full h-full object-cover"
+          controls
+          preload="metadata"
+        >
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+    ))}
+  </div>
+  
+  {images.length === 0 && videos.length === 0 && (
+    <p class="text-gray-500 text-center py-8">
+      No hay medios disponibles para mostrar.
+    </p>
+  )}
+</div>

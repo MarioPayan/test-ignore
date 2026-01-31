@@ -1,17 +1,195 @@
 ---
+/**
+ * Página Principal - La Casa del Poeta
+ */
 
+import Layout from '../layouts/Layout.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { testimonials, culturalEvents, includedServices } from '../data/rooms';
+import { siteContent } from '../data/content';
+import { images } from '../data/images';
+
+const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-terracota-900/90 to-sage-900/80 z-10"></div>
+    <img 
+      src={images.hero}
+      alt={siteContent.siteName}
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    
+    <div class="relative z-20 text-center px-4 max-w-4xl fade-in">
+      <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
+        {siteContent.hero.title}
+      </h1>
+      <p class="text-xl md:text-2xl mb-4 font-light">
+        {siteContent.hero.subtitle}
+      </p>
+      <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+        {siteContent.hero.description}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/habitaciones" 
+          class="bg-terracota-600 hover:bg-terracota-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors shadow-lg"
+        >
+          {siteContent.hero.ctaButton}
+        </a>
+        <a 
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors shadow-lg"
+        >
+          {siteContent.hero.whatsappButton}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Incluidos -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">
+          {siteContent.services.title}
+        </h2>
+        <p class="text-lg text-gray-600">
+          {siteContent.services.subtitle}
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {includedServices.map((service) => (
+          <ServiceCard 
+            icon={service.icon}
+            name={service.name}
+            description={service.description}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Eventos Culturales -->
+  <section class="py-16 bg-sage-50/30">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">
+          {siteContent.culturalEvents.title}
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          {siteContent.culturalEvents.subtitle}
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {culturalEvents.map((event) => (
+          <div class="bg-white rounded-lg overflow-hidden shadow-medium hover:shadow-lg transition-shadow">
+            {event.image && (
+              <img 
+                src={event.image} 
+                alt={event.title}
+                class="w-full h-64 object-cover"
+                loading="lazy"
+              />
+            )}
+            <div class="p-6">
+              <span class="inline-block bg-sage-600/10 text-sage-700 px-3 py-1 rounded-full text-sm font-medium mb-3">
+                {event.frequency}
+              </span>
+              <h3 class="text-2xl font-serif font-bold text-gray-900 mb-3">
+                {event.title}
+              </h3>
+              <p class="text-gray-600">
+                {event.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-10">
+        <a 
+          href="/eventos" 
+          class="inline-block bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+        >
+          {siteContent.culturalEvents.ctaButton}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">
+          {siteContent.testimonials.title}
+        </h2>
+        <p class="text-lg text-gray-600">
+          {siteContent.testimonials.subtitle}
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.slice(0, 3).map((testimonial) => (
+          <TestimonialCard 
+            name={testimonial.name}
+            text={testimonial.text}
+            date={testimonial.date}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación Preview -->
+  <section class="py-16 bg-sage-50/50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl font-serif font-bold text-gray-900 mb-6">
+          {siteContent.location.title}
+        </h2>
+        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+          {siteContent.location.description}
+        </p>
+        <a 
+          href="/ubicacion" 
+          class="inline-block bg-sage-600 hover:bg-sage-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+        >
+          {siteContent.location.ctaButton}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Final -->
+  <section class="py-20 bg-gradient-to-r from-terracota-600 to-terracota-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">
+        {siteContent.finalCta.title}
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        {siteContent.finalCta.description}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white text-terracota-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-bold transition-colors shadow-lg"
+        >
+          {siteContent.finalCta.whatsappButton}
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

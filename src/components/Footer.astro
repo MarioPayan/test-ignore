@@ -1,0 +1,115 @@
+---
+/**
+ * Footer / Pie de página
+ */
+
+import { siteContent } from '../data/content';
+
+const whatsappLink = `https://wa.me/${siteContent.whatsappNumber}`;
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div>
+        <h3 class="text-xl font-serif font-bold text-white mb-4">
+          {siteContent.siteName}
+        </h3>
+        <p class="text-sm leading-relaxed mb-4">
+          {siteContent.siteDescription}
+        </p>
+        <p class="text-sm">
+          <strong class="text-white">Ubicación:</strong><br />
+          Barrio San Antonio<br />
+          Cali, Colombia
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-serif font-bold text-white mb-4">
+          Enlaces
+        </h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/habitaciones" class="hover:text-sage-400 transition-colors">
+              Nuestras Habitaciones
+            </a>
+          </li>
+          <li>
+            <a href="/eventos" class="hover:text-sage-400 transition-colors">
+              Eventos Culturales
+            </a>
+          </li>
+          <li>
+            <a href="/nosotros" class="hover:text-sage-400 transition-colors">
+              Sobre Nosotros
+            </a>
+          </li>
+          <li>
+            <a href="/ubicacion" class="hover:text-sage-400 transition-colors">
+              Cómo Llegar
+            </a>
+          </li>
+          <li>
+            <a href="/contacto" class="hover:text-sage-400 transition-colors">
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-serif font-bold text-white mb-4">
+          Contáctanos
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start">
+            <span class="mr-2">📱</span>
+            <div>
+              <a 
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-sage-400 transition-colors"
+              >
+                +57 301 271 2450
+              </a>
+              <br />
+              <span class="text-xs text-gray-400">WhatsApp disponible</span>
+            </div>
+          </li>
+          <li class="flex items-center">
+            <span class="mr-2">📸</span>
+            <a 
+              href={siteContent.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-sage-400 transition-colors"
+            >
+              {siteContent.instagramHandle}
+            </a>
+          </li>
+        </ul>
+
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block mt-6 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors font-medium text-sm"
+        >
+          Reservar Ahora
+        </a>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+      <p>
+        © {new Date().getFullYear()} {siteContent.siteName}. Todos los derechos reservados.
+      </p>
+      <p class="mt-2 text-xs text-gray-500">
+        Diseñado con 🌿 para el barrio San Antonio
+      </p>
+    </div>
+  </div>
+</footer>
