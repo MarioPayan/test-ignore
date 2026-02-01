@@ -17,9 +17,12 @@ export default defineConfig({
   // Optimizaciones de build
   build: {
     inlineStylesheets: 'auto',
+    minify: true
   },
   vite: {
     build: {
+      minify: 'terser',
+      cssMinify: true,
       cssCodeSplit: true,
       rollupOptions: {
         output: {
