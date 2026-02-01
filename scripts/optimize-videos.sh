@@ -94,7 +94,7 @@ total_original=0
 total_compressed=0
 
 # Procesar cada video
-find public/images -type f -name "*.mp4" | while read -r video; do
+while IFS= read -r video; do
     # Obtener información del archivo
     original_size=$(stat -f%z "$video" 2>/dev/null || stat -c%s "$video" 2>/dev/null)
     rel_path="${video#public/images/}"
@@ -105,7 +105,7 @@ find public/images -type f -name "*.mp4" | while read -r video; do
     show_info "Procesando: $rel_path"
     echo "   Tamaño original: $(echo "scale=2; $original_size / 1024 / 1024" | bc)MB"
     
-    # Comprimir video con ffmpeg
+    # Comprimir video con ffmpeg (redirigir stdin para evitar conflictos con el loop)
     ffmpeg -i "$video" \
         -c:v libx264 \
         -crf 28 \
@@ -115,7 +115,7 @@ find public/images -type f -name "*.mp4" | while read -r video; do
         -movflags +faststart \
         -y \
         "$temp_video" \
-        -loglevel error -stats
+        -loglevel error -stats </dev/null
     
     if [ -f "$temp_video" ]; then
         new_size=$(stat -f%z "$temp_video" 2>/dev/null || stat -c%s "$temp_video" 2>/dev/null)
@@ -137,7 +137,7 @@ find public/images -type f -name "*.mp4" | while read -r video; do
     fi
     
     echo ""
-done
+done < <(find public/images -type f -name "*.mp4")
 
 echo ""
 echo "================================================"
